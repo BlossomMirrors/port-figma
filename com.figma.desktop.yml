@@ -48,11 +48,7 @@ modules:
           /app/share/metainfo/com.figma.desktop.metainfo.xml
 
       # Disable theme engine by default so it doesn't collide with Figma's own CSS
-      - python3 -c "
-          f = open('/app/lib/figma-linux/resources/app.asar', 'r+b');
-          d = f.read();
-          d = d.replace(b'disableThemes:!1', b'disableThemes:!0', 1);
-          f.seek(0); f.write(d); f.close()"
+      - python3 -c "f=open('/app/lib/figma-linux/resources/app.asar','r+b');d=f.read();d=d.replace(b'disableThemes:!1',b'disableThemes:!0',1);f.seek(0);f.write(d);f.close()"
 
     sources:
       - type: file
