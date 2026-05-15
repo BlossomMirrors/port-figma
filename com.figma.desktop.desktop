@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Figma
+GenericName=Interface Design Tool
+Comment=The collaborative interface design tool
+Exec=figma-linux %U
+Icon=com.figma.desktop
+Categories=Graphics;2DGraphics;VectorGraphics;
+MimeType=x-scheme-handler/figma;
+StartupWMClass=figma-linux

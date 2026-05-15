@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component type="desktop-application">
+  <id>com.figma.desktop</id>
+  <name>Figma</name>
+  <summary>The collaborative interface design tool</summary>
+  <description>
+    <p>
+      Figma is a cloud-based collaborative interface design tool for building user interfaces,
+      prototypes, and design systems.
+    </p>
+  </description>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <url type="homepage">https://www.figma.com</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1260" height="944">https://cdn.sanity.io/images/599r6htc/regionalized/2f1c0ba703010a1b4126b14a9b0a65695e2655c2-1260x944.png</image>
+      <caption>Design with components and color libraries</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1560" height="1248">https://cdn.sanity.io/images/599r6htc/regionalized/24e122cd8a5089bd145f3fd46a35554bae2780b4-1560x1248.png</image>
+      <caption>Dev Mode — inspect designs and copy code</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1560" height="1248">https://cdn.sanity.io/images/599r6htc/regionalized/969d0fb681b2dfa08c6028611ded150d6df5595e-1560x1248.png</image>
+      <caption>Build and publish websites with Figma Sites</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1560" height="1249">https://cdn.sanity.io/images/599r6htc/regionalized/d067ab6e66615f0d82b1878ccf20126024ff48f7-1560x1249.png</image>
+      <caption>Prototype interactions with Figma Make</caption>
+    </screenshot>
+  </screenshots>
+  <icon type="stock">com.figma.desktop</icon>
+  <launchable type="desktop-id">com.figma.desktop.desktop</launchable>
+  <categories>
+    <category>Graphics</category>
+    <category>VectorGraphics</category>
+  </categories>
+  <keywords>
+    <keyword>figma</keyword>
+    <keyword>design</keyword>
+    <keyword>ui</keyword>
+    <keyword>ux</keyword>
+    <keyword>prototyping</keyword>
+    <keyword>vector</keyword>
+    <keyword>collaborative</keyword>
+  </keywords>
+  <releases>
+    <release version="0.11.5" date="2024-11-01" />
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>

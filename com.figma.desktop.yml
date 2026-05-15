@@ -1,0 +1,73 @@
+app-id: com.figma.desktop
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+command: figma-linux
+separate-locales: false
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=dri
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --env=ELECTRON_IS_DEV=0
+  - --env=ELECTRON_FORCE_IS_PACKAGED=true
+  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
+
+modules:
+  - name: figma-linux
+    buildsystem: simple
+    build-commands:
+      # Extract app bundle (zip has duplicate entries; -o overwrites silently)
+      - unzip -o figma-linux.zip -d app
+      # Install app bundle
+      - install -d /app/lib/figma-linux
+      - cp -r app/. /app/lib/figma-linux/
+      - chmod 755 /app/lib/figma-linux/figma-linux
+
+      # Install launcher
+      - install -Dm755 figma-linux.sh /app/bin/figma-linux
+
+      # Install desktop entry
+      - install -Dm644 com.figma.desktop.desktop
+          /app/share/applications/com.figma.desktop.desktop
+
+      # Install icon
+      - install -Dm644 com.figma.desktop.svg
+          /app/share/icons/hicolor/scalable/apps/com.figma.desktop.svg
+
+      # Install metainfo
+      - install -Dm644 com.figma.desktop.metainfo.xml
+          /app/share/metainfo/com.figma.desktop.metainfo.xml
+
+    sources:
+      - type: file
+        url: https://github.com/Figma-Linux/figma-linux/releases/download/v0.11.5/figma-linux_0.11.5_linux_amd64.zip
+        sha256: e667df1d31cc9ff12f31d092289394a29296818a212dfe3fad0e98af7a0aadcd
+        only-arches: [x86_64]
+        dest-filename: figma-linux.zip
+
+      - type: file
+        url: https://github.com/Figma-Linux/figma-linux/releases/download/v0.11.5/figma-linux_0.11.5_linux_arm64.zip
+        sha256: 68d10dd46c6c1431cda0f6fa226b18b66636387885846031c25eaf3a224d0899
+        only-arches: [aarch64]
+        dest-filename: figma-linux.zip
+
+      - type: file
+        path: figma-linux.sh
+
+      - type: file
+        path: com.figma.desktop.desktop
+
+      - type: file
+        path: com.figma.desktop.metainfo.xml
+
+      - type: file
+        path: com.figma.desktop.svg
