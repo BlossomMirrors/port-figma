@@ -40,8 +40,8 @@ modules:
           /app/share/applications/com.figma.desktop.desktop
 
       # Install icon
-      - install -Dm644 com.figma.desktop.svg
-          /app/share/icons/hicolor/scalable/apps/com.figma.desktop.svg
+      - install -Dm644 com.figma.desktop.png
+          /app/share/icons/hicolor/scalable/apps/com.figma.desktop.png
 
       # Install metainfo
       - install -Dm644 com.figma.desktop.metainfo.xml
@@ -73,4 +73,4 @@ modules:
         path: com.figma.desktop.metainfo.xml
 
       - type: file
-        path: com.figma.desktop.svg
+        path: com.figma.desktop.png
